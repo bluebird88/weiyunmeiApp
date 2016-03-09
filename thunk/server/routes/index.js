@@ -61,4 +61,12 @@ router[putOfPassword.method](putOfPassword.url,putOfPassword.execute);
 var putUserInfo = require('./putUserInfo');
 router[putUserInfo.method](putUserInfo.url,putUserInfo.execute);
 
+/* 用户注册 */
+var postRegister = require('./postRegister');
+router[postRegister.method](postRegister.url,postRegister.execute());
+
+/* 微信登录 */
+var wechatLogin = require('./wechatLogin');
+router[wechatLogin.method](wechatLogin.url,wechatLogin.execute());
+
 module.exports = router;

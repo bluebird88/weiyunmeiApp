@@ -49,16 +49,24 @@ app.use(function(req,res,next){
     requestUrl = requestUrl.split('?')[0];
   }
   if(requestUrl!='/login.do' || requestUrl!='/register.do'){
-    var token = req.query.token;
-    if(stringUtils.isBlank(token)){
-      res.writeJson(res.STATUS.NO_PERMISSION,'尚未登录','无访问权限');
-      return;
-    }
 
-    var userInfo = mapCache.getCache(token,env.cache.userInfo);
-    if(userInfo == null || userInfo.id==null){
-      res.writeJson(res.STATUS.NO_PERMISSION,'尚未登录','无访问权限');
-      return;
+    if(requestUrl!='/weichat/login.do') { // 微信登录,不验证权限
+      var token = req.query.token;
+      if (stringUtils.isBlank(token)) {
+        res.writeJson(res.STATUS.NO_PERMISSION, '尚未登录', '无访问权限');
+        return;
+      }
+
+      var userInfo = mapCache.getCache(token,env.cache.userInfo);
+      if(userInfo == null || userInfo.id==null){
+        res.writeJson(res.STATUS.NO_PERMISSION,'尚未登录','无访问权限');
+        return;
+      }
+    }else{  // 微信绑定操作的时候,可能会用到当前登录用户的信息
+      var userInfo = mapCache.getCache(token,env.cache.userInfo);
+      if(userInfo == null || userInfo.id==null){
+        userInfo = {};
+      }
     }
 
     req.userInfo = userInfo;

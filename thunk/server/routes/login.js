@@ -34,11 +34,8 @@ module.exports = {
                 cache.addCache(loginToken,env.cache.userInfo,response.result);  // 缓存用户信息
                 res.writeJson(res.STATUS.SUCCESS,{token:loginToken,userInfo:response.result},response.message);
             }else{                      // 登录失败
-                res.writeJson(res.STATUS.FAIL,'',response.message);
+                throw new Error(response.message,'login');
             }
-        }).catch(function(e){
-            // 请求服务器失败
-            res.writeJson(res.STATUS.FAIL,'','用户名或密码错误')
         });
     }
 };

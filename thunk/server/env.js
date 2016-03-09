@@ -3,6 +3,12 @@ module.exports = {
     port : 80,
     clientId : '',
     clientKey : '',
+    wechat : {
+        oauth : {
+            appid : '',
+            secret : ''
+        }
+    },
     urls : {
         // 根据用户名和密码获取用户
         findByLoginNameAndPassword : {
@@ -86,6 +92,87 @@ module.exports = {
             url : '',
             params : {
                 userId : 'user.id'
+            }
+        },
+        // 获取收益明细
+        getConsumeDetails : {
+            url : '',
+            params : {
+                userId : ''
+            }
+        },
+        // 获取粉丝收益
+        getConsumeOfFans : {
+            url : '',
+            params : {
+                userId : ''
+            }
+        },
+        // 获取粉丝列表
+        getFans : {
+            url : '',
+            params : {
+                userId : ''
+            }
+        },
+        // 完成任务
+        putAdvertisementOfComplete : {
+            url : '',
+            params : {
+                userId : '',
+                advertisementId : '',
+                data : ''       // {name:value,name:value} - base64加密
+            }
+        },
+        // 接受任务
+        putAdvertisementOfStart : {
+            url : '',
+            params : {
+                userId : '',
+                advertisementId : ''
+            }
+        },
+        // 修改密码
+        resetPassword : {
+            url : '',
+            params : {
+                newPassword : '',
+                oldPassword : '',
+                userId : ''
+            }
+        },
+        // 修改用户资料
+        putUserInfo : {
+            url : '',
+            params : {
+                userId : '',
+                icon : '',
+                name : '',
+                sex : '',
+                mobile : '',
+                birthday : '',
+                address : ''
+            }
+        },
+        // 用户注册
+        register : {
+            url : '',
+            params : {
+                mobile : '',
+                password : ''
+            }
+        },
+        // 微信登录
+        loginOfWechat : {
+            url : '',
+            params : {
+                wechatId : '',
+                nickname : '',
+                sex : '',
+                province : '',
+                city : '',
+                headimgUrl : '',
+                userId : ''
             }
         }
     },
