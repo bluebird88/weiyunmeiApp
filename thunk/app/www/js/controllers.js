@@ -1,28 +1,42 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope) {})
-
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
+/*
+    首页
+*/
+.controller('HomeCtrl', function($scope) {
+    function GetDateStr(AddDayCount) {
+        var dd = new Date();
+        dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期
+        var y = dd.getFullYear();
+        var m = dd.getMonth()+1;//获取当前月份的日期
+        var d = dd.getDate();
+        return y+"-"+m+"-"+d;
+    }
+    $scope.yesterday = GetDateStr(-1);
+    $scope.lists = [{name:1},{name:1},{name:1}];
 })
+/*
+    列表
+*/
+.controller('taskListCtrl', function($scope) {
+    $scope.items = [{name:1},{name:1},{name:1},{name:1}];
+    $scope.vm = {
+        moredata : true,
+        doRefresh : function() {
+            $scope.$broadcast('scroll.refreshComplete');
+        },
+        loadMore : function() {
+            var items = [{name:1},{name:1},{name:1}];
+            $scope.items = items.concat($scope.items);
+            $scope.$broadcast('scroll.infiniteScrollComplete');
+        }
+    };
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
 })
+/*
+    我的
+*/
+.controller('meCtrl', function($scope) {
 
-.controller('AccountCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+
 });

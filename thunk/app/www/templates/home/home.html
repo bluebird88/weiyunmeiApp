@@ -1,0 +1,40 @@
+<ion-view view-title="微云媒">
+    <ion-content>
+        <div class="row">
+            <div style="flex:1;text-align:left;">
+                <div>昨日收益（元）</div>
+                {{yesterday}}
+            </div>
+            <div style="flex:1;text-align:right;">
+                收益明细
+            </div>
+        </div>
+        <div style="text-align:center;">2000</div>
+        <div class="row">
+            <div style="flex:1;text-align:center;">
+                累计收益：22232元
+            </div>
+            <div style="flex:1;text-align:center;">
+                可用余额：336元
+            </div>
+        </div>
+        <ion-list>
+            <ion-item class="item-icon-right row" ng-repeat="list in lists" style="border-right:0px;">
+                <table class="item-table">
+                    <tr>
+                        <td style="width:60px;text-align:center;">LG</td>
+                        <td>
+                            <h2>你与手机君的关系</h2>
+
+                            <h3>分享之后每次阅读0.1元，10次xxxxxxxxxxxxxxxxaaaaaaaa</h3>
+
+                            <h3>活动总奖金剩余2234元</h3>
+                        </td>
+                        <td style="width:60px;text-align:center;">￥20</td>
+                    </tr>
+                </table>
+            </ion-item>
+        </ion-list>
+
+    </ion-content>
+</ion-view>
