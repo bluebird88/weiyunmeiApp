@@ -61815,6 +61815,7 @@ IonicModule
       }
 
       buttonEle.className = 'button back-button hide buttons ' + (tElement.attr('class') || '');
+
       buttonEle.innerHTML = tElement.html() || '';
 
       var childNode;

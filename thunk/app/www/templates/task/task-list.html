@@ -1,0 +1,24 @@
+<ion-view view-title="微云媒">
+    <ion-content>
+        <!--<ion-refresher pulling-text="下拉刷新" on-refresh="vm.doRefresh()"></ion-refresher>-->
+        <ion-list>
+            <ion-item class="item-icon-right row" ng-repeat="list in items" style="border-right:0px;">
+                <table class="item-table">
+                    <tr>
+                        <td style="width:60px;text-align:center;">LG</td>
+                        <td>
+                            <h2>你与手机君的关系</h2>
+
+                            <h3>分享之后每次阅读0.1元，10次xxxxxxxxxxxxxxxxaaaaaaaa</h3>
+
+                            <h3>活动总奖金剩余2234元</h3>
+                        </td>
+                        <td style="width:60px;text-align:center;">￥20</td>
+                    </tr>
+                </table>
+            </ion-item>
+        </ion-list>
+        <!-- ion-infinite-scroll 上拉加载数据指令 distance默认1% nf-if的值为false时，就禁止执行on-infinite  -->
+        <ion-infinite-scroll ng-if="vm.moredata" on-infinite="vm.loadMore()" distance="1%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>
