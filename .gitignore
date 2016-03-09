@@ -2,3 +2,4 @@
 *.idea/
 *tempUploadFile/
 *fileStore/
+.D*Store
