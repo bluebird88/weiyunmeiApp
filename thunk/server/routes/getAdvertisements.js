@@ -1,5 +1,5 @@
 /**
- * 获取所有推广中的广告列表
+ * 获取广告列表
  */
 var http = require('../utils/http'),
     env = require('../env').urls.getAdvertisements,

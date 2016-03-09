@@ -12,7 +12,7 @@ module.exports = {
         http.get(env.url).then(function(advertisementTypes){
 
             if(advertisementTypes.status != 0){
-                throw new Error(advertisementTypes.message,'get_advertisements');
+                throw new Error(advertisementTypes.message,'get_advertisement_type');
             }
 
             res.writeJson(res.STATUS.SUCCESS,advertisementTypes.result,'ok');
