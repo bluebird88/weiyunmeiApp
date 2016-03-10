@@ -8,3 +8,26 @@
 .item-table td {
     vertical-align:middle;
 }
+.item .rightInfo {
+    height:60px;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    line-height:60px;
+    color:red;
+    font-size:110%;
+}
+table.fans {
+    width:100%;
+}
+table.fans td {
+    text-align:center;
+}
+/********邀请粉丝*******/
+.invite-fans{
+    list-style-type:demical;list-style:decimal;
+    padding-left:20px;
+}
+.invite-fans li{
+    list-style-position:outside;
+}

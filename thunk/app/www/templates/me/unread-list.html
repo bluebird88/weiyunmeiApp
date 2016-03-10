@@ -1,0 +1,10 @@
+<ion-view view-title="未读消息">
+    <ion-content>
+        <ion-list>
+            <a class="item" ng-repeat="list in items" href="#/tab/unreadInfo">
+                <h2>{{list.name}}</h2>
+            </a>
+        </ion-list>
+        <ion-infinite-scroll ng-if="vm.moredata" on-infinite="vm.loadMore()" distance="1%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

@@ -49,6 +49,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
             }
         }
     })
+    /*
+        粉丝邀请页
+    */
+    .state('tab.invite', {
+        url: '/invite',
+        views: {
+            'tab-home': {
+                templateUrl: 'templates/home/invite-fans.html',
+                controller: 'InviteCtrl'
+            }
+        }
+    })
 
     /*
         任务列表
@@ -58,7 +70,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-task': {
                 templateUrl: 'templates/task/task-list.html',
-                controller: 'taskListCtrl'
+                controller: 'TaskListCtrl'
             }
         }
     })
@@ -70,7 +82,79 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-me': {
                 templateUrl: 'templates/me/me.html',
-                controller: 'meCtrl'
+                controller: 'MeCtrl'
+            }
+        }
+    })
+    /*
+        重置密码
+    */
+    .state('tab.resetPass', {
+        url: '/resetPass',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/reset-pass.html',
+                controller: 'ResetPassCtrl'
+            }
+        }
+    })
+    /*
+        关于我们
+    */
+    .state('tab.about', {
+        url: '/about',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/about.html',
+                controller: 'AboutCtrl'
+            }
+        }
+    })
+    /*
+        未读消息
+    */
+    .state('tab.unread', {
+        url: '/unread',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/unread-list.html',
+                controller: 'UnreadListCtrl'
+            }
+        }
+    })
+    /*
+        未读消息详情
+    */
+    .state('tab.unreadInfo', {
+        url: '/unreadInfo',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/unread-info.html',
+                controller: 'UnreadInfoCtrl'
+            }
+        }
+    })
+    /*
+        粉丝详情
+    */
+    .state('tab.fansList', {
+        url: '/fansList',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/fans-list.html',
+                controller: 'FansListCtrl'
+            }
+        }
+    })
+    /*
+        个人资料
+    */
+    .state('tab.personal', {
+        url: '/personal',
+        views: {
+            'tab-me': {
+                templateUrl: 'templates/me/personal.html',
+                controller: 'PersonalCtrl'
             }
         }
     })
@@ -82,7 +166,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         views: {
             'tab-me': {
                 templateUrl: 'templates/me/tixian-list.html',
-                controller: 'meCtrl'
+                controller: 'TiXianCtrl'
             }
         }
     });

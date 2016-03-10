@@ -61859,7 +61859,8 @@ IonicModule
         if (!hasPreviousTitle && $ionicConfig.backButton.previousTitleText()) {
           buttonTextEle.innerHTML += '<span class="previous-title"></span>';
         }
-        buttonEle.appendChild(buttonTextEle);
+        /*****************************返回按钮内容***********************************************/
+        //buttonEle.appendChild(buttonTextEle);
 
       }
 
