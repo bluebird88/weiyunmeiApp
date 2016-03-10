@@ -8,7 +8,8 @@ var env = require('../env').urls.loginOfWechat,
 
 var OAuth = require('wechat-oauth');
 var Promise = require('bluebird');
-var client = Promise.promisifyAll(OAuth(weichatEnv.appid,weichatEnv.secret));
+
+var client = Promise.promisifyAll(new OAuth(weichatEnv.appid,weichatEnv.secret));
 
 module.exports = {
     url : '/weichat/login.do',

@@ -24,6 +24,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// 签名验证
+app.use(function(req,res,next){
+
+  next();
+});
+
 app.use(function(req,res,next){
   res.STATUS = {
     SUCCESS : 0,
@@ -31,7 +37,7 @@ app.use(function(req,res,next){
     NO_PERMISSION : -10
   };
 
-  res.writeJson = function(status,result,message){
+  res.writeJson = function(status,data,message){
     this.json({
       status : status,
       result : data,

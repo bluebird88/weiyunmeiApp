@@ -5,8 +5,8 @@ module.exports = {
     clientKey : '',
     wechat : {
         oauth : {
-            appid : '',
-            secret : ''
+            appid : 'appid',
+            secret : 'secret'
         }
     },
     urls : {
