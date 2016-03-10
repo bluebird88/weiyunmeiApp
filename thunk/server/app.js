@@ -9,6 +9,7 @@ var mapCache = require('./MapCache');
 var env = require('./env');
 
 var routes = require('./routes/index');
+var crypto = require('crypto');
 
 var app = express();
 
@@ -24,17 +25,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 签名验证
-app.use(function(req,res,next){
-
-  next();
-});
-
 app.use(function(req,res,next){
   res.STATUS = {
     SUCCESS : 0,
     FAIL : -1,
-    NO_PERMISSION : -10
+    NO_PERMISSION : -10,
+    NO_SIGN : -20
   };
 
   res.writeJson = function(status,data,message){
@@ -46,6 +42,28 @@ app.use(function(req,res,next){
   };
 
   next();
+});
+
+// 签名验证
+app.use(function(req,res,next){
+  var nonce_str = req.query.nonce_str;  // 随机字符串
+  var sign = req.query.sign;            // 签名
+  var appid = 'weiyunmei_appid_yyl_wp'; // appid
+
+  if(stringUtils.isBlank(nonce_str) || stringUtils.isBlank(sign)){
+    res.writeJson(res.STATUS.NO_SIGN,'','fail,no sign');
+  }
+
+  var tempSign = 'nonce_str='+nonce_str+"&appid="+appid;
+
+  var md5sum = crypto.createHash('md5');
+  md5sum.update(tempSign);
+  var thisSign = md5sum.digest('hex').toUpperCase();
+  if(thisSign==sign){
+    next();
+  }
+
+  res.writeJson(res.STATUS.NO_SIGN,'','fail,no sign');
 });
 
 // 权限判断
