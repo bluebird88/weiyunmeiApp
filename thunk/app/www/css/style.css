@@ -14,8 +14,8 @@
     top: 10px;
     right: 15px;
     line-height:60px;
-    color:red;
-    font-size:110%;
+    color:#8EC61B;
+    font-size:130%;
 }
 table.fans {
     width:100%;
@@ -30,4 +30,58 @@ table.fans td {
 }
 .invite-fans li{
     list-style-position:outside;
+}
+/*********替换tab底部选中颜色**********/
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+    color: #87BB1B;
+}
+.b-green{
+    background:#8FC32F;
+    color:#ffffff;
+    font-size:120%;
+}
+.c-bai {
+    color:#ffffff;
+}
+.item .home-h3 {
+    color:#FF0000;
+    font-size:75%;
+    font-weight:300;
+}
+.home-i{
+    margin-left:5px;
+    float:right;color:#3D3D3D;font-size:110%;margin-right:5px;
+}
+.me-i {
+    margin-left:5px;
+    float:right;font-size:110%;
+    color:#C0C0C0;
+}
+.me-margin{
+    margin-top:10px;
+}
+.me-color {
+    color:#8EC61B;
+}
+.me-i-color {
+    color:#C1B9B9;
+    font-size:160%;
+    position:absolute;
+    left:15px;
+    top:14px;
+}
+.me-list a{
+    padding-left:45px;
+}
+.fans th {
+    font-size:120%;
+    color:#96CA47;
+    font-weight:500;
+}
+.fans tr {
+    border-bottom:1px solid #ccc;
+}
+.fans th,.fans td {
+    padding-top:15px;
+    padding-bottom:15px;
 }

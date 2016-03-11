@@ -2,15 +2,18 @@
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input">
-                <input type="password" placeholder="旧密码" ng-model="user.password" ng-init="user.password=''">
+                <span class="input-label" style="width:25px;"><i class="ion-locked" style="color:#C1B9B9;font-size:130%;"></i></span>
+                <input type="password" placeholder="请输入原密码" ng-model="user.password" ng-init="user.password=''">
             </label>
             <label class="item item-input">
-                <input type="password" placeholder="新密码" ng-model="user.newPassword" ng-init="user.newPassword=''">
+                <span class="input-label" style="width:25px;"><i class="ion-locked" style="color:#C1B9B9;font-size:130%;"></i></span>
+                <input type="password" placeholder="请输入新密码" ng-model="user.newPassword" ng-init="user.newPassword=''">
             </label>
             <label class="item item-input">
-                <input type="password" placeholder="重复新密码" ng-model="user.newPassword2" ng-init="user.newPassword2=''">
+                <span class="input-label" style="width:25px;"><i class="ion-locked" style="color:#C1B9B9;font-size:130%;"></i></span>
+                <input type="password" placeholder="请重复新密码" ng-model="user.newPassword2" ng-init="user.newPassword2=''">
             </label>
-            <button class="button button-balanced" style="width:100%;margin-top:10px;" ng-click="submit(user)">
+            <button class="button button-balanced" style="width:100%;margin-top:10px;background-color:#96CC34;" ng-click="submit(user)">
                 提交
             </button>
         </div>

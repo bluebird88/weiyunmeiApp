@@ -3924,13 +3924,22 @@ a.subdued {
       color: #444; }
     .bar.bar-light.bar-footer {
       background-image: linear-gradient(180deg, #ddd, #ddd 50%, transparent 50%); }
+  /***********原本样式*********
   .bar.bar-stable {
     border-color: #b2b2b2;
     background-color: #f8f8f8;
     background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
     color: #444; }
     .bar.bar-stable .title {
-      color: #444; }
+          color: #444; }
+    */
+    .bar.bar-stable {
+        border-color: #b2b2b2;
+        background-color: #8FC32F;
+        background-image: linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%);
+        color: #fff; }
+    .bar.bar-stable .title {
+      color: #fff; }
     .bar.bar-stable.bar-footer {
       background-image: linear-gradient(180deg, #b2b2b2, #b2b2b2 50%, transparent 50%); }
   .bar.bar-positive {
@@ -3940,6 +3949,10 @@ a.subdued {
     color: #fff; }
     .bar.bar-positive .title {
       color: #fff; }
+    .bar.bar-jianbian-greed {
+        border-color: #0c60ee;
+        background:-webkit-gradient(linear, 0% 0%, 0% 100%,from(#85A646), to(#8DC120));
+        color: #fff; height:45px;}
     .bar.bar-positive.bar-footer {
       background-image: linear-gradient(180deg, #0c60ee, #0c60ee 50%, transparent 50%); }
   .bar.bar-calm {
@@ -4010,7 +4023,7 @@ a.subdued {
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 17px;
+    font-size: 19px;
     font-weight: 500;
     line-height: 44px; }
     .bar .title.title-left {
@@ -4127,7 +4140,7 @@ a.subdued {
     border-color: transparent;
     background: none;
     box-shadow: none;
-    color: #444;
+    color: #ECE6E6;
     font-size: 17px; }
   .bar-stable .button.button-icon {
     border-color: transparent;

@@ -2045,7 +2045,7 @@ window.ionic.version = '1.2.4';
   }
 
   var IOS = 'ios';
-  var ANDROID = 'android';
+  var ANDROID = 'ios';
   var WINDOWS_PHONE = 'windowsphone';
   var EDGE = 'edge';
   var CROSSWALK = 'crosswalk';
@@ -52150,43 +52150,7 @@ IonicModule
 
   // Android
   // -------------------------
-  setPlatformConfig('android', {
-
-    views: {
-      transition: 'android',
-      swipeBackEnabled: false
-    },
-
-    navBar: {
-      alignTitle: 'left',
-      positionPrimaryButtons: 'right',
-      positionSecondaryButtons: 'right'
-    },
-
-    backButton: {
-      icon: 'ion-android-arrow-back',
-      text: false,
-      previousTitleText: false
-    },
-
-    form: {
-      checkbox: 'square',
-      toggle: 'small'
-    },
-
-    spinner: {
-      icon: 'android'
-    },
-
-    tabs: {
-      style: 'striped',
-      position: 'top'
-    },
-
-    scrolling: {
-      jsScrolling: false
-    }
-  });
+  setPlatformConfig('android', {});
 
   // Windows Phone
   // -------------------------
