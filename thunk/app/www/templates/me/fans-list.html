@@ -1,0 +1,17 @@
+<ion-view view-title="粉丝详情">
+    <ion-content>
+        <table class="fans">
+            <tr style="border-color:#8EC61B;">
+                <th>级数</th>
+                <th>粉丝昵称</th>
+                <th>来自TA的收益</th>
+            </tr>
+            <tr ng-repeat="list in items">
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+            </tr>
+        </table>
+        <ion-infinite-scroll ng-if="vm.moredata" on-infinite="vm.loadMore()" distance="1%" ></ion-infinite-scroll>
+    </ion-content>
+</ion-view>

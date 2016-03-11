@@ -1,9 +1,13 @@
 <ion-view view-title="提现记录">
-    <ion-nav-bar class="bar-assertive">
-        <ion-nav-back-button class="button-icon ion-ios-arrow-left">
-        </ion-nav-back-button>
-    </ion-nav-bar>
     <ion-content>
-        1
+        <ion-list>
+            <a class="item item-thumbnail-left" ng-repeat="list in items" href="#" style="padding-left:80px;min-height: 80px;">
+                <img src="img/ben.png" style="width:60px;height:60px;">
+                <h2 style="margin-top:10px;">{{list.name}}</h2>
+                <p style="margin-top:5px;">{{list.date}}</p>
+                <div class="rightInfo">{{list.money}}元</div>
+            </a>
+        </ion-list>
+        <ion-infinite-scroll ng-if="vm.moredata" on-infinite="vm.loadMore()" distance="1%" ></ion-infinite-scroll>
     </ion-content>
 </ion-view>
