@@ -30,6 +30,11 @@ module.exports = {
         // 远程服务器验证
         http.get(env.urls.findByLoginNameAndPassword.url,datas).then(function(response){
             if(response.status==0){     // 登录成功
+
+                if(response.result==null || response.result==""){
+                    throw new Erro("用户名或者密码错误","login");
+                }
+
                 var loginToken = uuid.v4();
                 cache.addCache(loginToken,env.cache.userInfo,response.result);  // 缓存用户信息
                 res.writeJson(res.STATUS.SUCCESS,{token:loginToken,userInfo:response.result},response.message);

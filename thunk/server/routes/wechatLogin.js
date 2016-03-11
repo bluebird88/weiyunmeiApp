@@ -27,7 +27,7 @@ module.exports = {
             datas[env.params.sex] = wechatResult.sex;
             datas[env.params.userId] = res.userInfo.id; // 如果有用户id,则表示是进行绑定微信操作
             // 远程服务器验证,注册或者登录
-            return http.get(env.url,datas);
+            return http.post(env.url,datas);
         }).then(function(response){
             if(response.status != 0){
                 throw new Error(response.message,'weichat_login');

@@ -12,9 +12,9 @@ module.exports = {
     urls : {
         // 根据用户名和密码获取用户
         findByLoginNameAndPassword : {
-            url : '',
+            url : '/user.do',
             params : {
-                loginName : 'loginName',
+                loginName : 'mobile',
                 password : 'password'
             }
         },
@@ -22,28 +22,28 @@ module.exports = {
         getConsumes : {
             // 获取累计收益
             getConsumesCount : {
-                url : '',
+                url : '/user/consume/log/count.do',
                 params : {
-                    id : 'id'
+                    id : 'user.id'
                 }
             },
             // 获取昨日收益
             getConsumes4yesterday : {
-                url : '',
+                url : '/user/consume/log/yesterday.do',
                 params : {
-                    id : 'id'
+                    id : 'user.id'
                 }
             },
             // 获取今日收益
             getConsumes4today : {
-                url : '',
+                url : '/user/consume/log/today.do',
                 params : {
-                    id : 'id'
+                    id : 'user.id'
                 }
             },
             // 获取账户余额
             getMoneyOfAccount : {
-                url : '',
+                url : '/user/money/:id.do',
                 params : {
                     id : 'id'
                 }
@@ -51,25 +51,25 @@ module.exports = {
         },
         // 获取广告数量
         getUserAdvertisementCount : {
-            url : '',
+            url : '/user/advertisement/count.do',
             params : {
                 status : 'status',
                 userId : 'user.id'
             },
             status : {
-                complete : ''
+                end : 2
             }
         },
         // 获取广告详情
         getAdvertisementDetail : {
-            url : '',
+            url : '/advertisement/:id.do',
             params : {
                 id : 'id'
             }
         },
         // 获取用户广告状态
         getUserAdvertisementStatus : {
-            url : '',
+            url : '/user/advertisement/status.do',
             params : {
                 userId : 'user.id',
                 advertisementIds : 'advertisementIds'
@@ -77,7 +77,7 @@ module.exports = {
         },
         // 获取所有的广告列表
         getAdvertisements : {
-            url : '',
+            url : '/advertisement.do?paging=true',
             params : {
                 pageNum : 'pageNum',
                 pageSize : 'pageSize'
@@ -85,94 +85,94 @@ module.exports = {
         },
         // 获取广告类型列表
         getAdvertisementTypes : {
-            url : ''
+            url : '/advertisement/type.do'
         },
         // 获取提现明细
         getCashingDetail : {
-            url : '',
+            url : '/user/cashing/log.do',
             params : {
                 userId : 'user.id'
             }
         },
         // 获取收益明细
         getConsumeDetails : {
-            url : '',
+            url : '/user/consume/log.do',
             params : {
-                userId : ''
+                userId : 'user.id'
             }
         },
         // 获取粉丝收益
         getConsumeOfFans : {
-            url : '',
+            url : '/user/consume/log/fans.do',
             params : {
-                userId : ''
+                userId : 'user.id'
             }
         },
         // 获取粉丝列表
         getFans : {
-            url : '',
+            url : '/user/:id/fans.do',
             params : {
-                userId : ''
+                userId : 'id'
             }
         },
-        // 完成任务
+        // 提交任务
         putAdvertisementOfComplete : {
-            url : '',
+            url : '/user/advertisement/:userId/:advertisementId.do?status=complete',
             params : {
-                userId : '',
-                advertisementId : '',
-                data : ''       // {name:value,name:value} - base64加密
+                userId : 'userId',
+                advertisementId : 'advertisementId',
+                data : 'data'       // {name:value,name:value} - base64加密
             }
         },
         // 接受任务
         putAdvertisementOfStart : {
-            url : '',
+            url : '/user/advertisement/:userId/:advertisementId.do?status=start',
             params : {
-                userId : '',
-                advertisementId : ''
+                userId : 'userId',
+                advertisementId : 'advertisementId'
             }
         },
         // 修改密码
         resetPassword : {
-            url : '',
+            url : '/user/password.do',
             params : {
-                newPassword : '',
-                oldPassword : '',
-                userId : ''
+                newPassword : 'newPassword',
+                oldPassword : 'oldPassword',
+                userId : 'id'
             }
         },
         // 修改用户资料
         putUserInfo : {
-            url : '',
+            url : '/user/:id.do',
             params : {
-                userId : '',
-                icon : '',
-                name : '',
-                sex : '',
-                mobile : '',
-                birthday : '',
-                address : ''
+                userId : 'id',
+                icon : 'icon',
+                name : 'name',
+                sex : 'sex',
+                mobile : 'mobile',
+                birthday : 'birthday',
+                address : 'address'
             }
         },
         // 用户注册
         register : {
-            url : '',
+            url : '/user.do',
             params : {
-                mobile : '',
-                password : ''
+                mobile : 'mobile',
+                password : 'password'
             }
         },
         // 微信登录
         loginOfWechat : {
-            url : '',
+            url : '/user/wechat.do',
             params : {
-                wechatId : '',
-                nickname : '',
-                sex : '',
-                province : '',
-                city : '',
-                headimgUrl : '',
-                userId : ''
+                wechatId : 'wechatId',
+                nickname : 'nickname',
+                sex : 'sex',
+                province : 'province',
+                city : 'city',
+                headimgUrl : 'headimgUrl',
+                userId : 'userId'
             }
         }
     },

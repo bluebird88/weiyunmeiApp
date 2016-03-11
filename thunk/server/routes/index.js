@@ -10,8 +10,8 @@ var consumes = require('./getConsumes');
 router[consumes.method](consumes.url,consumes.execute);
 
 /* 获取已完成的广告总数 */
-var getAdvertisementCountOfComplete = require('./getAdvertisementCountOfComplete');
-router[getAdvertisementCountOfComplete.method](getAdvertisementCountOfComplete.url,getAdvertisementCountOfComplete.execute);
+var getAdvertisementCountOfEnd = require('./getAdvertisementCountOfEnd');
+router[getAdvertisementCountOfEnd.method](getAdvertisementCountOfEnd.url,getAdvertisementCountOfEnd.execute);
 
 /* 获取广告详情 */
 var getAdvertisementDetail = require('./getAdvertisementDetail');

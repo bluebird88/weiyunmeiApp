@@ -11,7 +11,7 @@ module.exports = {
         var userId = req.userInfo.id;
 
         var datas = {};
-        datas[userAdvertisementCountEnv.params.status] = userAdvertisementCountEnv.status.complete;
+        datas[userAdvertisementCountEnv.params.status] = userAdvertisementCountEnv.status.end;
         datas[userAdvertisementCountEnv.params.userId] = userId;
         http.get(userAdvertisementCountEnv.url,data).then(function(advertisementCount){
 
