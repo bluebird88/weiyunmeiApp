@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "dependencies": {
     "bluebird": "^3.3.4",
@@ -16,6 +18,8 @@
     "morgan": "~1.6.1",
     "node-uuid": "^1.4.7",
     "serve-favicon": "~2.3.0",
-    "wechat-oauth": "^1.1.1"
-  }
+    "wechat-oauth": "^1.1.1",
+    "snyk": "^1.230.5"
+  },
+  "snyk": true
 }
